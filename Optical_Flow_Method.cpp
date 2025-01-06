@@ -496,7 +496,7 @@ bool OpticalFlowMethod::isCFL(float* a1, float* a2, float* cfl1, float* cfl2, in
 				cfl2[s] = a2[s] * (dt_hy);
 				if (abs(cfl1[s]) > 1.0 || abs(cfl2[s]) > 1.0)
 				{
-					cout << "CFL porusena v k = " << k << " na i * hx: " << i * hx << ", j * hy: " << jhy << ", cfl1[s] je: " << cfl1[s] << ", cfl2[s] je: " << cfl2[s] << endl;
+					cout << "CFL condition not satisfied, k = " << k << ", i * hx: " << i * hx << ", j * hy: " << jhy << ", cfl1[s]: " << cfl1[s] << ", cfl2[s]: " << cfl2[s] << endl;
 					b = false;
 				}
 			}
@@ -544,7 +544,7 @@ int main()
 
 		if (gdIt % 10 == 0)
 		{
-			cout << "Konec iterace èíslo " << gdIt << endl;
+			cout << "Konec iterace Ã¨Ã­slo " << gdIt << endl;
 			cout << "*______________________*" << endl;
 		}
 		if (gdIt % 100 == 0 || gdIt == 1)
